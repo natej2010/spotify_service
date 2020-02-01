@@ -1,2 +1,2 @@
-# BGG-Service
-Service for communicating with BGG API
+# Game-Service
+Service for communicating with Game API

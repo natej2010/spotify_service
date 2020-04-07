@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cachememorymillionaires",
+  "private_key_id": "4454e12b60918f80d80891e7907a1cd5437c848c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDF/LF4z5lYV0zk\nDf4J0hTcD2Fg3BM1NRFMW04BQuCAAIGaquqHMWe6vXoetAB5XxeXuBxw9WtBQang\nRxhvJCBCye8OX7Gbo7TEDgrtuGuQ59liIUCnjhszVplZXtdXUl3MkawZNW/DkcM/\n45Aznl/uIam+pRkO2/naOkcBVPQ4TXVbR5r5KniRuDazAETUI+Y2JIsM/5VE9JL7\nHRXTmMofiz91JJFuBivqPMeLdpmc3GU9RMesgdnbwgoorgYNXQbLAk0sflGpdQiz\ntdtnHxTTU861QgxJzYoZII4Oa52C3xefnFZiwzpOjAIpbxFc0UE9IxLSu754tLG6\ni+DeflSHAgMBAAECggEAIrq4xuBjncNykW6C6WYYkqGAC2WPWP3+Es7RWBdLGij8\nkwz4Js7byz4BdfFNQ/0SPmLlWksyjTfffJ/8AULtBco2TOcsWIjW5K0x7ZE0DS8e\nSsBafwnGa7L9I1gnngGswn2rGqDtAflHrqVUXjmhyjvNcsuzIZAku8sNOYaVcGqW\n9e2xTBqTMfq2yKG+qsTAasle/6G5dbRIwHvL5qcmuioRccS+t5MByRL3Twj3vKZs\nnkHiIpu+f+3XgHl2c2pPzbjP0vJfvrqDhkEp3ywJ4K3bgxgakCG19pQdpyRTZU8G\nuVTCjrCui2XRItWWXe4xvPycJOEcogTf2vtquYKlAQKBgQDkKJZcqjGga9KPFGFE\nE84CKSfuKnxyOyuUBjTeF74D/UPKngON1e6tlI7cnKF/MBVb9Yk1xJn6+sj1eCNS\nskkaB3NnyMK35Xe+l7YispQFt74AET7TCdxfFCsd8kp/MXQ4GkVloqIg4f82rmY3\nK6P3IJB2PhA6h4tWb2aT9HxksQKBgQDeJZV4Kri58H+8kRHssrhWE4nYXT2ibWuu\nJicvTmc2sdl1ShNJJ3aYQOiFKlP4/GgN/Gi40gpoJlq4FvS5IEWOhboQD8aV//mt\nJJ+ySM9EROvwHIn01dkpDaRJM2w9oscQgPyIR0WucZ6CPzR42C3U0ZvZpxSW7ysY\nq0Xz6HZ6twKBgQDT1Lcd28ptpg39V6+i1DxtlyaCoqGeMT+ZlFWbajG6ZHd/dEva\ncSjDsm0deLMcclkyYvp8mEdaVWMlPOCW0/65EvfcAPKAaKVPqG2rM1/pGxpl150b\ntUkMYZ5SlHUEOLctq36JCYE7xHf+ndc7G+KE/JADqEXLAbOlkZKMhe7EUQKBgQCW\nuiOPlFUgfGj/VeM2mhDu/nTSJHm0Ys/kKqj9tRHdD5E/vtIVGbyjE69w40Z0szYa\n/z9C3+kFv7hgHdtQXPA1AtE7IqkYj8Ul0Kq2eiZ/6M+5bHPCdvLQoxvsOwLfUzoE\nHbC6+rjx4s+tChudPvjh5JL9fBtBSegQ5e0h0IHLQwKBgQDic/1PjHyZHTj54fTz\n9dUYl9cgw+k+qN55e/zPLBuWONIWQX8oSJr7GLU8Uthon5Ax7ozJUsbhFtMHsO5s\nJ48auklz12iKvS2X8hCoPZQoSSESdkAMPH7AczWvhIwVSYP2Kld1R775jnF0K+jR\n3tlF8WQ6NyRgt9fXf4miePQmag==\n-----END PRIVATE KEY-----\n",
+  "client_email": "datastore@cachememorymillionaires.iam.gserviceaccount.com",
+  "client_id": "114545852959391170067",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/datastore%40cachememorymillionaires.iam.gserviceaccount.com"
+}

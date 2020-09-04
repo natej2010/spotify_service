@@ -8,9 +8,9 @@ def create_app(config_name):
     app.config.from_pyfile('config.py')
 
     # Import Blueprints
-    from .api.game import game
+    from .api.spotify import spotify
 
     # Register Blueprints
-    app.register_blueprint(game)
+    app.register_blueprint(spotify)
 
     return app

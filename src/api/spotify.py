@@ -1,17 +1,26 @@
 from flask import Blueprint, jsonify, request
-from google.cloud import datastore
+import os
+import requests
 
-game = Blueprint('game', __name__)
 
-# Fetch the Datastore Client
-def get_client():
-   return datastore.Client('cachememorymillionaires')
+spotify = Blueprint('spotify', __name__)
 
-@game.route('/api/game/<int:id>')
-def get_game(id):
-    games = {1: {'name': 'game1', 'details': 'game1_details'},
-             2: {'name': 'game2', 'details': 'game2_details'}}
-    return jsonify(games.get(id, 'Failed to find game.'))
+
+@spotify.route('/api/spotify/authenticate')
+def authenticate():
+    client_id = os.getenv('CLIENT_ID')
+    client_service = os.getenv('CLIENT_SECRET')
+
+    payload = dict(
+        client_id=client_id,
+        response_type='code',
+        redirect_uri='http://localhost/',
+        scope='playlist-read-private playlist-read-collaborative user-library-modify playlist-modify-private playlist-modify-public'
+    )
+
+    response = requests.request('GET', 'https://accounts.spotify.com/authorize', headers=headers)
+    
+    return "token"
 
 # Get Game Night Status
 @game.route('/api/game/status', methods=['GET'])

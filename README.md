@@ -1,2 +1,2 @@
-# Game-Service
-Service for communicating with Game API
+# Apple Music Service
+Service for communicating with Apple Music API

@@ -1,43 +1,57 @@
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, redirect, request, session, url_for
+import base64
+import json
 import os
 import requests
 
 
 spotify = Blueprint('spotify', __name__)
 
+SPOTIFY_API = "https://api.spotify.com"
+
+@spotify.route('/api/spotify/')
+def home():
+    if session.get('auth_header'):
+        return user_profile()
+    else:
+        return "Welcome to my Spotify API you aren't logged in!"
+
+@spotify.route('/api/spotify/callback')
+def callback():
+    auth_str = bytes(f'{os.getenv("CLIENT_ID")}:{os.getenv("CLIENT_SECRET")}', 'utf-8')
+    b64_auth = base64.b64encode(auth_str).decode('utf-8')
+    header = {'Authorization': f'Basic {b64_auth}'}
+    data = dict(
+        grant_type='authorization_code',
+        code=request.args.get('code'),
+        redirect_uri='http://localhost:5000/api/spotify/callback')
+    response = requests.request('POST', 'https://accounts.spotify.com/api/token', headers=header, data=data)
+    
+    response_data = json.loads(response.text)
+    session['auth_header'] = {'Authorization': f'Bearer {response_data.get("access_token")}'}
+
+    return redirect(url_for(home))
 
 @spotify.route('/api/spotify/authenticate')
 def authenticate():
     client_id = os.getenv('CLIENT_ID')
-    client_service = os.getenv('CLIENT_SECRET')
 
     payload = dict(
         client_id=client_id,
         response_type='code',
-        redirect_uri='http://localhost/',
+        redirect_uri='http://localhost:5000/api/spotify/callback',
         scope='playlist-read-private playlist-read-collaborative user-library-modify playlist-modify-private playlist-modify-public'
     )
 
-    response = requests.request('GET', 'https://accounts.spotify.com/authorize', headers=headers)
+    response = requests.request('GET', 'https://accounts.spotify.com/authorize', params=payload)
     
-    return "token"
+    
+    return redirect(response.url)
 
-# Get Game Night Status
-@game.route('/api/game/status', methods=['GET'])
-def get_game_night_game_status():
-    game_id = request.args.get('game_id')
-    status_id = request.args.get('status_id')
-    ds = get_client()
-    game = ds.get(game_id)
-    return game['status']
+@spotify.route('/api/spotify/user_name')
+def user_profile():
+    response = requests.request('GET', f"{SPOTIFY_API}/v1/me", headers=session.get('auth_header'))
+    response_data = json.loads(response.text)
 
-# Update Game Night Status
-@game.route('/api/game/status/<int:id>', methods=['POST'])
-def set_game_status():
-    game_id = request.args.get('game_id')
-    status_id = request.args.get('status_id')
-    ds=get_client();
-    game = ds.get(game_id)
-    game['status']=status_id
-    ds.put(game)
+    return response_data
 

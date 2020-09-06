@@ -1,6 +1,4 @@
 Flask
 gunicorn
-flask_jwt_extended
 requests
 xmltodict
-google-cloud-datastore

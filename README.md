@@ -1,2 +1,2 @@
-# Apple Music Service
-Service for communicating with Apple Music API
+# Spotify Service
+Service for communicating with Spotify API
